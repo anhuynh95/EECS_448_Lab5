@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Username Register</title>
+</head>
+<body>
+  	<h2>Please Enter Your Username to Start</h2>
+  <form method="post" action="CreateUser.php">
+  	  <input type="text" name="username" value="<?php echo $username; ?>" required="" placeholder="Username" 
+  	  oninvalid ="this.setCustomValidity('Username is Required')" oninput="setCustomValidity('')"><br>
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  </form>
+</body>
+</html>
