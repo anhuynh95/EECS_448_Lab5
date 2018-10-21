@@ -30,6 +30,11 @@
       
       $check->free();
   }
+  else
+  {
+    echo "Your Database is Empty";
+  }
   /* close connection */
   $mysqli->close();
+  echo '<a href="https://people.eecs.ku.edu/~a054h720/">Return To Index</a>';
  ?>
