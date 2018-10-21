@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User</title>
+</head>
+<body>
+	<h3>Please Choose Posts To Delete:</h3>
+	<form form action="ViewUserPosts.php" method="post" >
+	<?php
+
+	mysql_connect("mysql.eecs.ku.edu", "a054h720", "Gameover1.");
+	mysql_select_db("a054h720");
+
+	//query
+	$sql=mysql_query("SELECT user_id FROM Users");
+	if(mysql_num_rows($sql)){
+	$select= '<table name="select">';
+	while($rs=mysql_fetch_array($sql)){
+		$select = '<tr>';
+		$select = '<td>';
+	    $select.='<input type="checkbox" value="'.$rs['user_id'].'">'.$rs['user_id'].'<br>';
+		$select = '</td>';
+		$select = '</tr>';
+	  }
+	}
+	$select.='</table>';
+	echo $select;
+	?>
+	 <button type="submit" class="btn" name="wiew">Confirm</button>
+	</form>
+</body>
+</html>

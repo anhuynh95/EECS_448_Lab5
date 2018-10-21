@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Username Register</title>
+</head>
+<body>
+  	
+  <form method="post" action="CreatePost.php">
+  		<h2>Please Enter Your Username to Post</h2>
+  	  <input type="text" name="username" value="<?php echo $username; ?>" required="" placeholder="Username" 
+  	  oninvalid ="this.setCustomValidity('Username is Required')" oninput="setCustomValidity('')"><br>
+  	  	<h2>Contents</h2>
+  	  <textarea rows="10" cols="100" name="post" value="<?php echo $post; ?>" required="" oninvalid ="this.setCustomValidity('Content is Required')" 
+  	  	oninput="setCustomValidity('')" placeholder ="Contents"></textarea> <br>
+  	  <button type="submit" class="btn" name="postButton">Post</button>
+  </form>
+</body>
+</html>

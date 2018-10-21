@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User</title>
+</head>
+<body>
+	<h3>Please Choose A User:</h3>
+	<form form action="ViewUserPosts.php" method="post" >
+	<?php
+
+	mysql_connect("mysql.eecs.ku.edu", "a054h720", "Gameover1.");
+	mysql_select_db("a054h720");
+
+	//query
+	$sql=mysql_query("SELECT user_id FROM Users");
+	if(mysql_num_rows($sql)){
+	$select= '<select name="select">';
+	while($rs=mysql_fetch_array($sql)){
+	      $select.='<option value="'.$rs['user_id'].'">'.$rs['user_id'].'</option>';
+	  }
+	}
+	$select.='</select>';
+	echo $select;
+	?>
+	 <button type="submit" class="btn" name="wiew">Confirm</button>
+	</form>
+</body>
+</html>
